@@ -14,7 +14,7 @@ circle {
   fill: #ffffff;
   fill-opacity: 1;
 }
-    
+
 text {
   font: 10px sans-serif;
 }
@@ -39,7 +39,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(2,2)");
 
-d3.json("cloth.json", function(error, root) {
+d3.json("discussion.json", function(error, root) {
   if (error) throw error;
 
   var node = svg.datum(root).selectAll(".node")
@@ -51,7 +51,7 @@ d3.json("cloth.json", function(error, root) {
   //node.append("text")
     //  .style("text-anchor","middle")
       //.text(function(d) { return d.name});
-    
+
   node.append("title")
       .text(function(d) { return d.name });
 
