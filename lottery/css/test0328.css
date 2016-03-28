@@ -1,0 +1,47 @@
+/***************************   header   *************************************/
+h1{
+	text-align: center;
+	font-size: 30px;
+  }
+
+
+/***************************   menu  *************************************/
+
+#menu{
+ 	background-color: black;
+}
+
+#menu ul{
+	padding: 0;
+	display: block;
+	text-align: center;
+	list-style: none;
+	
+}
+
+#menu li{
+	float: center;
+	margin-right:60px;
+	margin-left:60px;
+	text-align: center;
+	display: inline-block;
+}
+
+#menu a{
+	padding: 0 10px;
+	color: white;
+	font-family:cursive;
+	font-size:20px;
+	text-align:center;
+	line-height:40px;
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu a:hover {
+	background:#FFFF33;
+	color:#FF0088;
+	font-weight: bold;
+}
