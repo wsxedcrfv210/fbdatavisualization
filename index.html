@@ -6,17 +6,11 @@
 </head>
 <body>
 <script language="javascript">
-	var Str1 = ["s1","s2"];
+	var Str1 = ["食品","休閒"];
 	var Str2 = [];
-	Str2[0] = ["s1-1","s1-2"];
-	Str2[1] = ["s2-1","s2-2"];
-	var Str3 = [];
-	Str3[0] = [];
-	Str3[1] = [];
-	Str3[0][0] = [1,2];
-	Str3[0][1] = [3,4];
-	Str3[1][0] = [5,6];
-	Str3[1][1] = [7,8];
+	Str2[0] = ["零食","飲料"];
+	Str2[1] = ["行李箱","服飾"];
+
 
 	function Add1(){
 	    var D1 = document.getElementById("D1");
@@ -44,22 +38,13 @@
 	        D3.options[i] = null;
 	    }
 	}
-	function Add3(){
-   var D1 = document.getElementById("D1");
-	    var D2 = document.getElementById("D2");
-	    var D3 = document.getElementById("D3");
-	    D3.options[0] = new Option("請選擇","請選擇");
-	    for(i=1;i<=Str3[D1.selectedIndex-1][D2.selectedIndex-1].length;i++){
-	        D3.options[i] = new Option(Str3[D1.selectedIndex-1][D2.selectedIndex-1][i-1],Str3[D1.selectedIndex-1][D2.selectedIndex-1][i-1]);
-	    }
-	}
+	
 
 </script>
 
 	<form method="POST" action="" name="form1">
 	<select size="1" id="D1" name="D1" onchange="Add2()"></select>
 	<select size="1" id="D2" name="D2" onchange="Add3()"></select>
-	<select size="1" id="D3" name="D3"></select>
 	</form>
     <br/>
     <input type=button value="確定" id="button1" ></button>
