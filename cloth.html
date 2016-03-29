@@ -11,7 +11,7 @@
               border: solid 1px #ddd;
               box-shadow: 0 0 4px rgba(0,0,0,0);
               font: 10px sans-serif;
-              height: 800px;
+              height: 400px;
               position: relative;
               width: 80%;
             }
@@ -34,7 +34,7 @@
 
 <body>
 
-  <div id="mainBubble" style="height: 579px;"><svg class="mainBubbleSVG" width="826.88" height="579"></svg></div>
+  <div id="mainBubble" style="height: 300px;"><svg class="mainBubbleSVG" width="826.88" height="579"></svg></div>
   <script>
    var w = window.innerWidth*0.68*0.95;
    var h = Math.ceil(w*0.7);
@@ -61,7 +61,7 @@
     .text(function(d) {return "D3.js bubble menu";});
 
 
-    d3.json("main.json", function(error, root) {
+    d3.json("cloth.json", function(error, root) {
         console.log(error);
 
         var bubbleObj = svg.selectAll(".topBubble")

@@ -1,0 +1,26 @@
+{"name":"bubble", "children": [
+{"name":"服飾","description":"生活",
+"children":[
+    {"name": "討論度分析","address":"discussion/discussion.html"},
+    {"name": "促銷活動","address":"event/index.html"},
+    {"name": "抽獎查詢","address":"lottery/lottery.html"}
+]},
+{"name":"", "description": "",
+"children":[
+    {"name":"","address":""},
+    {"name":"","address":""},
+    {"name":"","address":""}
+]},
+{"name":"", "description": "",
+"children":[
+    {"name":"","address":""},
+    {"name":"","address":""},
+    {"name":"","address":""}
+]},
+{"name":"", "description": "",
+"children":[
+    {"name":"","address":""},
+    {"name":"","address":""},
+    {"name":"","address":""}
+]}
+]}

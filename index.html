@@ -2,54 +2,103 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Untitled Document</title>
+    <title>FB 資料視覺化</title>
+    <style>
+
+        a {text-decoration:none; color: #FFFFFF}
+
+
+
+        *{
+            margin:0px ;
+            padding:0px;
+        }
+        #menu{
+            margin: auto;
+        }
+        .main{
+            background-color:#ADD8E6;
+            color:white;
+            font-family:微軟正黑體;
+            font-weight:bold;
+            font-size:20px;
+            cursor:pointer;
+            text-align:center;
+            height:35px;
+            line-height:35px;
+            width:100px;
+        }
+        .main:hover{
+            background-color:#DEB887;
+        }
+        .sub{
+            cursor:pointer;
+            background-color:#DEB887;
+            color:white;
+            font-family:微軟正黑體;
+            text-align:center;
+            font-weight:bold;
+            width:100px;
+        }
+        .sub li{
+            list-style-type:none;
+            line-height:25px;
+        }
+        .item{
+            float:left;
+        }
+    </style>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var oldtext=['美食','服飾']
+            var newtext=['Food','Cloth']
+            $(".sub").slideUp(0)
+            for(i=0;i<$(".main").length;i++){
+                $(".main:eq("+i+")").mouseover({id:i},function(e){
+                    n=e.data.id
+                    $(".main:eq("+n+")").text(newtext[n])
+                    $(".sub:eq("+n+")").slideToggle()
+                    $(".sub:not(:eq("+n+"))").slideUp()
+                })
+                $(".main").mouseout({id:i},function(e){
+                    n=e.data.id
+                   // $(".sub").slideUp(200)
+                    $(".main:eq("+n+")").text(oldtext[n])
+                })
+            }
+            $("#menu").css("width",$(".main").length*100)
+        })
+    </script>
 </head>
 <body>
-<script language="javascript">
-	var Str1 = ["食品","休閒"];
-	var Str2 = [];
-	Str2[0] = ["零食","飲料"];
-	Str2[1] = ["行李箱","服飾"];
+<div id="menu">
+<!-- 第一組清單   -->
+    <div class="item">
+    <div class="main">美食</div>
+    <div class="sub">
+        <ul>
+            <li>飲品</li>
+            <li>生活</li>
+
+        </ul>
+    </div>
+    </div>
+<!-- 第二組清單   -->
+    <div class="item">
+    <div class="main">生活</div>
+    <div class="sub">
+      <ul>
+          <li><a href="cloth.html" title="cloth" text-decoration:none>服飾</a></li>
+          <li><a href="suitcase.html" title="cloth" text-decoration:none>行李箱</a></li>
+      </ul>
+    </div>
+    </div>
 
 
-	function Add1(){
-	    var D1 = document.getElementById("D1");
-	    var D2 = document.getElementById("D2");
-	    var D3 = document.getElementById("D3");
-	    D1.options[0] = new Option("請選擇","請選擇");
-	    for(i=1;i<=Str1.length;i++){
-	        D1.options[i] = new Option(Str1[i-1],Str1[i-1]);
-	    }
-	}
-	function Add2(){
-	    var D1 = document.getElementById("D1");
-	    var D2 = document.getElementById("D2");
-	    var D3 = document.getElementById("D3");
-	    D2.options[0] = new Option("請選擇","請選擇");
-	    for(i=D2.length;i>0;i--){
-	        D2.options[i] = null;
-	    }
-	    if(D1.selectedIndex>0){
-	        for(i=1;i<=Str2[D1.selectedIndex-1].length;i++){
-	            D2.options[i] = new Option(Str2[D1.selectedIndex-1][i-1],Str2[D1.selectedIndex-1][i-1]);
-	        }
-	    }
-	    for(i=D3.length;i>0;i--){
-	        D3.options[i] = null;
-	    }
-	}
-	
 
-</script>
-
-	<form method="POST" action="" name="form1">
-	<select size="1" id="D1" name="D1" onchange="Add2()"></select>
-	<select size="1" id="D2" name="D2" onchange="Add3()"></select>
-	</form>
-    <br/>
-    <input type=button value="確定" id="button1" ></button>
-
-<script language="javascript">Add1();</script>
+</div>
 
 
 </body>
